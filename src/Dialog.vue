@@ -186,12 +186,11 @@ export default {
     },
     hide() {
       if (this.isHidden) return
-      this.anime(this.$el, 'fadeOut').then(() => {
-        this.$el.style.display = 'none'
-        this.resumeParentOverflow()
-        this.$emit('input', false)
-        this.isHidden = true
-      })
+      
+      this.$el.style.display = 'none'
+      this.resumeParentOverflow()
+      this.$emit('input', false)
+      this.isHidden = true
     },
     maskClicked() {
       if (!this.clickMask2Close) return
